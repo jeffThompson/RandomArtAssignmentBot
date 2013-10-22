@@ -46,13 +46,13 @@ os.system('cls' if os.name=='nt' else 'clear')
 # SOURCE LISTS
 do_list = [ 'make', 'construct', 'build', 'create', 'produce' ]
 
-media_list = [ 'painting', 'drawing', 'collage', 'sculpture', 'assemblage', 'stone carving', 'photograph', 'installation', 'film', 'video', 'etching', 'lithograph', 'woodblock print', 'flipbook', 'website', 'performance' ]
+media_list = [ 'piece', 'series', 'painting', 'drawing', 'collage', 'sculpture', 'assemblage', 'stone carving', 'photograph', 'installation', 'film', 'video', 'etching', 'lithograph', 'woodblock print', 'flipbook', 'website', 'performance' ]
 
 verbs = [ 'exploring', 'investigating', 'interrogating', 'of', 'experimenting with', 'on', 'about', 'analyzing', 'examining', 'probing', 'researching', 'critiquing', 'examining', 'considering', 'challenging',  ]
 
 approaches = [ 'the idea of', 'your relationship to', 'the exploitation of', 'the history of' ]
 
-topics = [ 'landscape', 'portrait', 'self-portrait', 'still life', 'gender', 'sexuality', 'history', 'food', 'home', 'social media', 'animals', 'self', 'Modernity', 'psycho-sexual self', 'narrative', 'cats on the internet', 'the body', 'sunsets' ]
+topics = [ 'landscape', 'portrait', 'self-portrait', 'still life', 'gender', 'sexuality', 'history', 'food', 'home', 'social media', 'animals', 'self', 'Modernity', 'psycho-sexual self', 'narrative', 'cats on the internet', 'the body', 'sunsets', 'time', 'mortality', 'memory', 'death', 'family', 'space', 'race', 'vulnerability', 'celebration', 'decoration', 'utility', 'pattern', 'childhood', 'the natural world' ]
 
 
 # CREATE TWEET FROM RANDOM CHOICES
