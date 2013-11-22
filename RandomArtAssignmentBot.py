@@ -5,6 +5,12 @@ Jeff Thompson | 2013 | www.jeffreythompson.org
 
 A Twitter bot that generates random art assignments.
 
+Takes the form of:
+	{do} {a/an} {media} {verb} {approach} {topic}, due {due_date}.
+
+For example:
+	Make a piece exploring the idea of landscape, due Feb 22, 2014.
+
 LOAD OAUTH SETTINGS
 Assumes Twitter OAuth settings, saved in a file
 called OAuthSettings.py, saved in the following format:
@@ -24,10 +30,6 @@ REQUIRES
 + Python Twitter
 	- https://github.com/bear/python-twitter
 
-
-TO DO:
-+ 
-
 This project is released under a Creative Commons BY-NC-SA
 License - feel free to use, but please let me know.
 
@@ -38,6 +40,8 @@ from datetime import date													# for date formatting
 from dateutil.relativedelta import relativedelta	# more date stuff
 from OAuthSettings import settings								# import from settings.py
 import twitter																		# for posting
+import os																					# for getting current directory
+from sys import exit															# for exiting when done posting
 
 # CLEAR SCREEN
 os.system('cls' if os.name=='nt' else 'clear')
@@ -48,11 +52,11 @@ do_list = [ 'make', 'construct', 'build', 'create', 'produce' ]
 
 media_list = [ 'piece', 'series', 'painting', 'drawing', 'collage', 'sculpture', 'assemblage', 'stone carving', 'photograph', 'installation', 'film', 'video', 'etching', 'lithograph', 'woodblock print', 'flipbook', 'website', 'performance' ]
 
-verbs = [ 'exploring', 'investigating', 'interrogating', 'of', 'experimenting with', 'on', 'about', 'analyzing', 'examining', 'probing', 'researching', 'critiquing', 'examining', 'considering', 'challenging',  ]
+verbs = [ 'exploring', 'investigating', 'interrogating', 'of', 'experimenting with', 'on', 'about', 'analyzing', 'examining', 'probing', 'researching', 'critiquing', 'examining', 'considering', 'challenging', 'denying', 'refusing'  ]
 
 approaches = [ 'the idea of', 'your relationship to', 'the exploitation of', 'the history of' ]
 
-topics = [ 'landscape', 'portrait', 'self-portrait', 'still life', 'gender', 'sexuality', 'history', 'food', 'home', 'social media', 'animals', 'self', 'Modernity', 'psycho-sexual self', 'narrative', 'cats on the internet', 'the body', 'sunsets', 'time', 'mortality', 'memory', 'death', 'family', 'space', 'race', 'vulnerability', 'celebration', 'decoration', 'utility', 'pattern', 'childhood', 'the natural world' ]
+topics = [ 'landscape', 'portrait', 'self-portrait', 'still life', 'gender', 'sexuality', 'history', 'food', 'home', 'social media', 'animals', 'self', 'Modernity', 'psycho-sexual self', 'narrative', 'cats on the internet', 'the body', 'sunsets', 'time', 'mortality', 'memory', 'death', 'family', 'space', 'race', 'vulnerability', 'celebration', 'decoration', 'utility', 'pattern', 'childhood', 'the natural world', 'your dream world' ]
 
 
 # CREATE TWEET FROM RANDOM CHOICES
@@ -125,25 +129,12 @@ except twitter.TwitterError:
 
 
 # SAVE TWEETS TO FILE
-# for posterity
-with open('Tweets.txt', 'a') as file:
+# get current directory, prepend to word list paths
+__location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
+with open(os.path.join(__location__, 'Tweets.txt'), 'a') as file:
 	file.write(assignment + '\n\n')
 
 
 # ALL DONE!
 print ('\n') * 4
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+exit()
