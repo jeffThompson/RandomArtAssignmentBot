@@ -43,6 +43,12 @@ import twitter																		# for posting
 import os																					# for getting current directory
 from sys import exit															# for exiting when done posting
 
+
+# VARIABLES
+additional_ofs = 20					# num of additional 'of', essentially weighted random for verbs
+chance_approach = 0.2				# chance assignment will include an approach (ie: 'your relationship to'...)
+
+
 # CLEAR SCREEN
 os.system('cls' if os.name=='nt' else 'clear')
 
@@ -50,9 +56,17 @@ os.system('cls' if os.name=='nt' else 'clear')
 # SOURCE LISTS
 do_list = [ 'make', 'construct', 'build', 'create', 'produce' ]
 
-media_list = [ 'piece', 'series', 'painting', 'drawing', 'collage', 'sculpture', 'assemblage', 'stone carving', 'photograph', 'installation', 'film', 'video', 'etching', 'lithograph', 'woodblock print', 'flipbook', 'website', 'performance' ]
+media_list = [ 'piece', 'series', 'dangerous project', 'work',
+'sculpture', 'assemblage', 'stone carving', 'installation', 'wood carving', 'welded metal sculpture', 'machine', 'clay form', '3d rendering'
+'photograph', 'film', 'video', 'website', 'piece of software',
+'etching', 'lithograph', 'woodblock print', 'screenprint', 'artist book', 'linocut'
+'flipbook',
+'performance', 'durational performance', 'event', 'intervention'  ]
 
-verbs = [ 'exploring', 'investigating', 'interrogating', 'of', 'experimenting with', 'on', 'about', 'analyzing', 'examining', 'probing', 'researching', 'critiquing', 'examining', 'considering', 'challenging', 'denying', 'refusing'  ]
+verbs = [ 'exploring', 'investigating', 'interrogating', 'experimenting with', 'on', 'about', 'analyzing', 'examining', 'probing', 'researching', 'critiquing', 'examining', 'considering', 'challenging', 'denying', 'refusing' ]
+
+for i in range(additional_ofs):
+	verbs.append('of')
 
 approaches = [ 'the idea of', 'your relationship to', 'the exploitation of', 'the history of' ]
 
@@ -105,8 +119,11 @@ else:
 article = 'a'
 if media[0] in 'aeiou':
 	article = 'an'
-assignment = do + ' ' + article + ' ' + media + ' ' + verb + ' ' + approach + ' ' + topic + ', due ' + due_date + '.'
 
+if random.random() < chance_approach:
+	assignment = do + ' ' + article + ' ' + media + ' ' + verb + ' ' + approach + ' ' + topic + ', due ' + due_date + '.'
+else:
+	assignment = do + ' ' + article + ' ' + media + ' ' + verb + ' ' + topic + ', due ' + due_date + '.'
 
 # LOAD OAUTH DETAILS FROM FILE TO ACCESS TWITTER
 # see notes at top for format
