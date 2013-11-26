@@ -57,10 +57,17 @@ os.system('cls' if os.name=='nt' else 'clear')
 do_list = [ 'make', 'construct', 'build', 'create', 'produce' ]
 
 media_list = [ 'piece', 'series', 'dangerous project', 'work',
-'sculpture', 'assemblage', 'stone carving', 'installation', 'wood carving', 'welded metal sculpture', 'machine', 'clay form', '3d rendering'
-'photograph', 'film', 'video', 'website', 'piece of software',
-'etching', 'lithograph', 'woodblock print', 'screenprint', 'artist book', 'linocut'
-'flipbook',
+
+'painting', 'drawing', 'collage', 'oil painting', 'watercolor painting',
+
+'sculpture', 'assemblage', 'stone carving', 'installation', 'wood carving', 'welded metal sculpture', 'machine', 'clay form', '3d rendering', 'functional object', 'mask', 'intervention in the landscape',
+
+'photograph', 'film', 'video', 'website', 'piece of software', 'videogame', 'first-person shooter', 'role-playing game', 'sound collage', 'sound installation', 'video installation', 'animated GIF', 'digital collage'
+
+'etching', 'lithograph', 'woodblock print', 'screenprint', 'artist book', 'linocut',
+
+'flipbook', 'board game'
+
 'performance', 'durational performance', 'event', 'intervention'  ]
 
 verbs = [ 'exploring', 'investigating', 'interrogating', 'experimenting with', 'on', 'about', 'analyzing', 'examining', 'probing', 'researching', 'critiquing', 'examining', 'considering', 'challenging', 'denying', 'refusing' ]
@@ -70,7 +77,7 @@ for i in range(additional_ofs):
 
 approaches = [ 'the idea of', 'your relationship to', 'the exploitation of', 'the history of' ]
 
-topics = [ 'landscape', 'portrait', 'self-portrait', 'still life', 'gender', 'sexuality', 'history', 'food', 'home', 'social media', 'animals', 'self', 'Modernity', 'psycho-sexual self', 'narrative', 'cats on the internet', 'the body', 'sunsets', 'time', 'mortality', 'memory', 'death', 'family', 'space', 'race', 'vulnerability', 'celebration', 'decoration', 'utility', 'pattern', 'childhood', 'the natural world', 'your dream world' ]
+topics = [ 'landscape', 'portrait', 'self-portrait', 'still life', 'gender', 'sexuality', 'history', 'food', 'home', 'social media', 'animals', 'self', 'Modernity', 'psycho-sexual self', 'narrative', 'cats on the internet', 'the body', 'sunsets', 'time', 'mortality', 'memory', 'death', 'family', 'space', 'race', 'vulnerability', 'celebration', 'decoration', 'utility', 'pattern', 'childhood', 'the natural world', 'your dream world', 'abstraction', 'shape', 'color', 'glitch', 'futility', 'fear', 'anger', 'happiness', 'anguish', 'war' ]
 
 
 # CREATE TWEET FROM RANDOM CHOICES
